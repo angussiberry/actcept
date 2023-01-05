@@ -8,7 +8,14 @@ function Header() {
         <span>ActCept | </span>
         <span>Part of GigStr</span>
       </div>
-      <Link to={"/my-events"}>My Events</Link>
+      <div>
+        <Link to={"/"}>All Events</Link>
+        <span> | </span>
+        <Link to={"/my-events"}>My Events</Link>
+
+
+      </div>
+
     </div>
   );
 }
