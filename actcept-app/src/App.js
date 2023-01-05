@@ -1,14 +1,23 @@
 import './App.css';
-import Banner from './components/Banner';
-import Content from './components/Content';
-import Header from './components/Header';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from './pages/Home';
+import MyEvents from './pages/MyEvents';
+import EventDescription from './pages/EventDescription';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Banner/>
-      <Content/>
+      <Router>
+        <Routes>
+          <Route path="/event-description" element={<EventDescription />} />
+          <Route path="/my-events" element={<MyEvents />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

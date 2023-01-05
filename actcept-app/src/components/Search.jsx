@@ -11,7 +11,10 @@ function Search() {
                 <div className='sort-container'>
                     <span>Sort</span>
                     <label htmlFor="">
-                        <select name="sort-event" id="">hmm
+                        <select name="sort-event" id="">
+                            <option value="">hello</option>
+                            <option value="">why</option>
+                            <option value="">now</option>
                         </select>
                     </label>
                 </div>

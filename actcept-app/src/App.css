@@ -29,7 +29,7 @@
 .Search {
   display: flex;
   flex-direction: column;
-  margin: 0.75rem;
+  padding: 0.75rem 0.75rem 0.75rem 0.75rem;
 }
 
 .search-header {
@@ -45,12 +45,7 @@
   align-items: flex-start;
 }
 
-/* .banner-header {
-  margin-top: 0;
-}
-.banner-desc {
-  margin-bottom: 0;
-} */
+
 .App-link {
   color: #61dafb;
 }
