@@ -9,9 +9,9 @@ function Header() {
         <span>Part of GigStr</span>
       </div>
       <div>
-        <Link to={"/"}>All Events</Link>
+        <Link to={"/"} className="link">All Events</Link>
         <span> | </span>
-        <Link to={"/my-events"}>My Events</Link>
+        <Link to={"/my-events"} className="link">My Events</Link>
 
 
       </div>
