@@ -16,7 +16,7 @@
   text-align: left;
   display: flex;
   flex-direction: column;
-  min-height: 8rem;
+  min-height: 10rem;
   justify-content: space-between;
   background-color: #D9D9D9;
 
@@ -45,6 +45,19 @@
   align-items: flex-start;
 }
 
+.card-deck {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 0.75rem 0 0.75rem;
+}
+
+.card {
+  margin: 0.75rem;
+  min-width: 15rem;
+  max-width: 15rem;
+}
 
 .link {
   color: #61dafb;
