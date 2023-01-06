@@ -12,9 +12,9 @@ function Search() {
                     <span>Sort</span>
                     <label htmlFor="">
                         <select name="sort-event" id="">
-                            <option value="">hello</option>
-                            <option value="">why</option>
-                            <option value="">now</option>
+                            <option value="">Date</option>
+                            <option value="">Location</option>
+                            <option value="">Name</option>
                         </select>
                     </label>
                 </div>
