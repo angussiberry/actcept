@@ -6,13 +6,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0.75rem;
+  padding: 1.5rem;
   background-color: black;
   color: white;
 }
 
 .Banner {
-  padding: 0rem 0.75rem 0.75rem 0.75rem;
+  padding: 0rem 1.5rem 1.5rem 1.5rem;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@
 .Search {
   display: flex;
   flex-direction: column;
-  padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+  padding: 1.5rem;
 }
 
 .search-header {
@@ -43,6 +43,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font-size: 1.5rem;
 }
 
 .card-deck {
@@ -50,11 +51,11 @@
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 0 0.75rem 0 0.75rem;
+  margin: 0 1rem 0 1rem;
 }
 
 .card {
-  margin: 0.75rem;
+  margin: 1rem;
   min-width: 15rem;
   max-width: 15rem;
 }
