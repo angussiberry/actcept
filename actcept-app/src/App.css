@@ -63,3 +63,43 @@
 .link {
   color: #61dafb;
 }
+
+.link-to {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.ticket-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ticket-left {
+  padding: 5rem;
+  background-color: #ffd485;
+  border-radius: 2rem 0em 0rem 2rem;
+}
+
+.ticket-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-inline: 1.5rem;
+}
+
+.ticket-input {
+  width: 100%;
+}
+
+.book-button {
+  border-radius: 1rem;
+}
+
+.ticket-right {
+  background-color: gainsboro;
+  padding: 5rem;
+  border-radius: 0rem 2rem 2rem 0;
+}

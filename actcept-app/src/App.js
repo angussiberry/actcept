@@ -7,6 +7,7 @@ import {
 import Home from './pages/Home';
 import MyEvents from './pages/MyEvents';
 import EventDescription from './pages/EventDescription';
+import BookTicket from './pages/BookTicket';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/event-description" element={<EventDescription />} />
           <Route path="/my-events" element={<MyEvents />} />
           <Route path="/" element={<Home />} />
+          <Route path="/book-ticket" element={<BookTicket />} />
         </Routes>
       </Router>
     </div>
