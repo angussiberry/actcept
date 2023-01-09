@@ -90,6 +90,10 @@
   padding-inline: 1.5rem;
 }
 
+.ticket-labels {
+  text-align: start;
+}
+
 .ticket-input {
   width: 100%;
 }

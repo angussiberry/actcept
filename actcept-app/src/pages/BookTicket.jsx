@@ -12,7 +12,9 @@ function BookTicket(props) {
                 <div className='link-to'>
                     <Link to='/event-description'>{`< Return to Event`}</Link>
                 </div>
-                <Ticket />
+                <Ticket
+                    name="AudioSlave Would tour"
+                    artist="AudioSlave" />
             </div>
 
         </div >
