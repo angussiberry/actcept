@@ -16,6 +16,13 @@ const getUserById = (id, elementList) => {
   });
 }; //keep
 
+const getUserByEmail = (id, elementList) => {
+  return elementList.find((element) => {
+    console.log(element.email)
+    return element.email === String(id);
+  });
+}; //keep
+
 const getReviewById = (id, elementList) => {
   return elementList.find((element) => {
     console.log(element.review_id)
@@ -129,6 +136,7 @@ module.exports = {
   getIndexById: getIndexById,
   getEventById: getEventById,
   getUserById: getUserById,
+  getUserByEmail: getUserByEmail,
   getReviewById: getReviewById,
   updateElement: updateElement
 };

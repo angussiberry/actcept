@@ -1,6 +1,7 @@
 const express = require('express');
-const { createEvent, getEventById } = require('./utils');
+const { createEvent, getEventById } = require('./utils'); //pulling useful functions from utils file
 
+//Dummy data
 let userEvents = [{
     "event_id": 0,
     "venue_id": "bahama",
@@ -37,14 +38,18 @@ userEventsRouter.get('/:event_id', (req, res, next) => {
 userEventsRouter.post('', (req, res, next) => {
     const receivedEvent = createEvent(req.body);
     console.log(req.body)
-    console.log(receivedEvent)
     if (receivedEvent){
+        if (getEventById(req.body.event_id, userEvents)){ 
+            res.status(409).send("ERROR: Looks like they were already going!")
+        } else {
             console.log(receivedEvent)
             userEvents.push(receivedEvent);
             res.status(201).send(receivedEvent)
+        }
     } else {
         res.status(404).send()
     }
 })
+
 
 module.exports = userEventsRouter;
