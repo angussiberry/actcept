@@ -1,13 +1,17 @@
 import React from 'react';
+import EventDescriptionBanner from '../components/EventDescriptionBanner';
 import Header from '../components/Header';
+import EventInfo from '../components/EventInfo';
+import EventContent from '../components/EventContent';
 
 function EventDescription() {
     return (
         <div className="EventDescription">
             <Header />
-            <h1>This</h1>
-            <h1>is</h1>
-            <h1>EventDescription</h1>
+            <EventDescriptionBanner/>
+            <EventInfo/>
+            <br/>
+            <EventContent/>
         </div>
     );
 }
