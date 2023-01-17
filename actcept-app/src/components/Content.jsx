@@ -1,8 +1,27 @@
 import '../App.css';
 import Card from './Card';
 import Search from './Search';
+import React, { useState, useEffect } from 'react';
 
 function Content() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/users', { mode: 'no-cors' });
+        const data = await response.json();
+        if (data) {
+          console.log(data);
+        }
+        console.log(data);
+        setUsers(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   const cards =
     <>
       <Card
@@ -47,6 +66,11 @@ function Content() {
       <div className="card-deck">
         {cards}
       </div>
+      {/* <div>
+        {users.map(user => (
+          <span key={user.id}>{user.venue_name}test</span>
+        ))}
+      </div> */}
     </div>
 
   );
