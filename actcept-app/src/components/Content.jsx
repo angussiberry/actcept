@@ -8,12 +8,11 @@ function Content() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/users', { mode: 'no-cors' });
+        const response = await fetch('http://localhost:8080/users');
         const data = await response.json();
         if (data) {
           console.log(data);
         }
-        console.log(data);
         setUsers(data);
       } catch (error) {
         console.log(error);
@@ -66,11 +65,11 @@ function Content() {
       <div className="card-deck">
         {cards}
       </div>
-      {/* <div>
+      <div>
         {users.map(user => (
-          <span key={user.id}>{user.venue_name}test</span>
+          <span key={user.user_id}>{user.name}</span>
         ))}
-      </div> */}
+      </div>
     </div>
 
   );
