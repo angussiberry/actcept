@@ -8,7 +8,7 @@ function Content() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/events');
+        const response = await fetch('http://localhost:8080/events/all');
         const data = await response.json();
         setEvents(data);
       } catch (error) {
@@ -63,9 +63,9 @@ function Content() {
         {events.map(event => (
           <Card key={event.event_id}
             title={event.event_name}
-            img={event.event_name}
-            des={event.event_name}
-            date={event.event_name}
+            img={event.image_url}
+            desc={event.event_description}
+            date={event.event_date}
           />
         ))}
       </div>
