@@ -8,7 +8,7 @@ function Content() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/events/all');
+        const response = await fetch('https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/events/all');
         const data = await response.json();
         setEvents(data);
       } catch (error) {
