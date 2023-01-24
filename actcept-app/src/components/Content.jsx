@@ -2,6 +2,7 @@ import '../App.css';
 import Card from './Card';
 import Search from './Search';
 import React, { useState, useEffect } from 'react';
+import GoogleMap from './GoogleMap';
 
 function Content() {
   const [events, setEvents] = useState([]);
@@ -71,6 +72,8 @@ function Content() {
         {cards}
 
       </div>
+      <GoogleMap lat={37.7749} lng={-10.4194} />
+
     </div>
 
   );
