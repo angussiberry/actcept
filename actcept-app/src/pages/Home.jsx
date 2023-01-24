@@ -12,7 +12,6 @@ function Home() {
                 const response = await fetch('https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/events?event_id=1');
                 const data = await response.json();
                 setFeaturedEvent(data);
-                console.log(featuredEvent)
             } catch (error) {
                 console.log(error);
             }
@@ -28,11 +27,12 @@ function Home() {
                 desc="long test loren"
                 date="10-12-2023" /> */}
             {/* {console.log(featuredEvent[0].image_url)} */}
-            <Banner
+            {featuredEvent.length ? <Banner
                 img={featuredEvent[0].image_url}
                 title={featuredEvent[0].event_name}
                 desc={featuredEvent[0].event_description}
-                date="10-12-2023" />
+                date="10-12-2023" /> : null}
+
             <Content />
         </div>
     );
