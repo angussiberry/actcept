@@ -8,7 +8,7 @@ function Banner(props) {
           <h1 className="banner-header">{props.title}</h1>
           <h4 className="banner-subtitle">{props.desc}
           </h4>
-          <h6>{props.date}</h6>
+          <h6>Date: {props.date.split('T')[0]}</h6> {/*splitting date and time*/}
         </div>
         <button className='btn banner-btn'>See more</button>
       </div>
