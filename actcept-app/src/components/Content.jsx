@@ -36,6 +36,7 @@ function Content() {
             img={event.image_url}
             desc={event.event_description}
             date={event.event_date.split('T')[0]}
+            id={event.event_id}
           />
         )) :
           events.map(event => (
@@ -44,6 +45,7 @@ function Content() {
               img={event.image_url}
               desc={event.event_description}
               date={event.event_date.split('T')[0]}
+              id={event.event_id}
             />
           ))}
       </div>
