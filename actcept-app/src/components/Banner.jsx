@@ -1,15 +1,20 @@
 import '../App.css';
 
-function Banner() {
+function Banner(props) {
   return (
-    <div className="Banner">
-      <div>
-        <h1 className="banner-header">ActCept</h1>
-        <h4 className="banner-subtitle">Part of GigStr</h4>
+    <div className="Banner" style={{ backgroundImage: `url(${props.img})` }} >
+      <div className='banner-overlay'>
+        <div className='banner-event'>
+          <h1 className="banner-header">{props.title}</h1>
+          <h4 className="banner-subtitle">{props.desc}
+          </h4>
+          <h6>{props.date}</h6>
+        </div>
+        <button className='btn banner-btn'>See more</button>
       </div>
-      <h4 className="banner-desc">Find the right event for you!</h4>
+
     </div>
   );
 }
-
+//
 export default Banner;

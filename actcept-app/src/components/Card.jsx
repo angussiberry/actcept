@@ -1,7 +1,10 @@
 import React from 'react';
+
 // import useState from 'react;'
 import { Link } from 'react-router-dom';
+
 function Card(props) {
+
     return (
         <div className="card">
             <img className="card-img-top" src={props.img} alt="Card cap" />

@@ -18,13 +18,11 @@
 }
 
 .Banner {
-  padding: 0rem 1.5rem 1.5rem 1.5rem;
   text-align: left;
   display: flex;
   flex-direction: column;
-  min-height: 10rem;
+  min-height: 20rem;
   justify-content: space-between;
-  background-color: #D9D9D9;
 
 }
 
@@ -32,21 +30,25 @@
   margin: initial;
 }
 
-.BannerEvents {
+.banner-overlay {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 212, 255, 0) 100%);
   padding: 0rem 1.5rem 1.5rem 1.5rem;
-  text-align: left;
+  min-height: inherit;
   display: flex;
   flex-direction: column;
-  min-height: 10rem;
   justify-content: space-between;
-  background-color: #000000;
 
 }
 
-.BannerEvents * {
-  margin: initial;
+.banner-event {
+  width: 75%;
+  padding-bottom: 1.5rem;
 }
 
+.banner-btn {
+  max-width: 10rem;
+}
 
 .Search {
   display: flex;
