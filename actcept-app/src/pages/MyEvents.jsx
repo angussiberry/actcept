@@ -1,14 +1,28 @@
 import React from 'react';
 import Header from '../components/Header';
+import EventList from "../components/EventList";
+import BannerEvents from '../components/BannerEvents';
+import '../App.css';
 
 function MyEvents() {
     return (
-        <div className='MyEvents'>
+        <div className='my-events'>
             <Header />
-            <h1>this</h1>
-            <h1>is</h1>
-            <h1>myevents</h1>
+            <BannerEvents />
+            <div className='event-box upcoming'>
+                <h6 className='title-event upcoming'>Upcoming Events</h6>
+                <EventList/>
+            </div>
+            <div className='event-box past'>
+                <h6 className='title-event past'>Past Events</h6>
+                <EventList/>
+            </div>
+            <div className='event-box reviews'>
+                <h6 className='title-event reviews'>Your Reviews</h6>
+                You haven't left any reviews yet.
+            </div>
         </div>
+
     );
 }
 
