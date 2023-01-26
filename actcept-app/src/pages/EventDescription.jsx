@@ -34,7 +34,11 @@ function EventDescription() {
                     img={event[0].image_url} /> : null}
 
                 <div className="event-info">
-                    <EventInfo />
+                    {event.length ? <EventInfo
+                        date={event[0].event_date}
+                        venue_name={event[0].venue_name}
+                        artist_name="Alex"
+                        event_description={event[0].event_description} /> : null}
                     <br />
                     <EventContent />
                 </div>
