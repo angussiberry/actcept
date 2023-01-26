@@ -13,6 +13,7 @@ function EventDescription() {
     const state = location.state;
     console.log(state)
     const [event, setEvent] = useState([]);
+    const [venue, setVenue] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -23,7 +24,17 @@ function EventDescription() {
                 console.log(error);
             }
         };
+        const fetchVenue = async () => {
+            try {
+                const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/getvenuebyevent/:event_id=${state}`);
+                const data = await response.json();
+                setVenue(data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
         fetchData();
+        fetchVenue();
     }, []);
     return (
         <div className="EventDescription">
@@ -37,7 +48,7 @@ function EventDescription() {
                     {event.length ? <EventInfo
                         date={event[0].event_date}
                         venue_name={event[0].venue_name}
-                        artist_name="Alex"
+                        artist_name={event[0].artist_name}
                         event_description={event[0].event_description} /> : null}
                     <br />
                     <EventContent />
