@@ -1,10 +1,15 @@
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 function EventContent() {
     return (
         <div ClassName="other-contents">
             <div ClassName="buttons">
-                <button type='button' className='btn'>Book Now</button>
+                <Link
+                    to='/book-ticket'>
+                    <button type='button' className='btn'>Book Now</button>
+                </Link>
+
                 <button type='button' className='btn'>Add to Shortlist</button>
                 <button type='button' className='btn'>Leave a Review</button>
             </div>
