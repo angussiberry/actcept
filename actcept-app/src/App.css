@@ -87,6 +87,11 @@
   max-width: 15rem;
 }
 
+.card-img-top {
+  max-height: 15rem;
+  object-fit: cover;
+}
+
 .link {
   color: #61dafb;
 }
