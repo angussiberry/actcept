@@ -4,7 +4,10 @@ function Banner(props) {
   return (
     <div className="Banner" style={{
       backgroundImage: `url(${props.img})`,
-      backgroundPosition: ` left top`
+      backgroundPosition: ` center center`,
+      backgroundRepeat: `no-repeat`,
+      objectFit: 'scale-down',
+      backgroundSize: `cover`
     }} >
       <div className='banner-overlay'>
         <div className='banner-event'>
