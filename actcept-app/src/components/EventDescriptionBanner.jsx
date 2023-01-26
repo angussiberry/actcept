@@ -3,7 +3,9 @@ import '../App.css';
 function EventDescriptionBanner(props) {
   return (
     <div className="Event_Banner">
-      <img src={props.img} />
+        <div className="event-img">
+          <img src={props.img} />
+        </div>
       <h1 className="banner-header">{props.event_name}</h1>
     </div>
   );
