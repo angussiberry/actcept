@@ -31,7 +31,7 @@ function Home() {
                 img={featuredEvent[0].image_url}
                 title={featuredEvent[0].event_name}
                 desc={featuredEvent[0].event_description}
-                date="10-12-2023" /> : null}
+                date={featuredEvent[0].event_date} /> : null}
 
             <Content />
         </div>
