@@ -2,7 +2,10 @@ import '../App.css';
 
 function Banner(props) {
   return (
-    <div className="Banner" style={{ backgroundImage: `url(${props.img})` }} >
+    <div className="Banner" style={{
+      backgroundImage: `url(${props.img})`,
+      backgroundPosition: ` left top`
+    }} >
       <div className='banner-overlay'>
         <div className='banner-event'>
           <h1 className="banner-header">{props.title}</h1>

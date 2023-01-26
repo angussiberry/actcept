@@ -6,6 +6,7 @@
 
 .App {
   text-align: center;
+  background-color: #DAE4EC;
 }
 
 .Header {
@@ -14,7 +15,7 @@
   justify-content: space-between;
   padding: 1.5rem;
   background-color: #385E71ff;
-  color: white;
+  color: #FF9A3A;
 }
 
 .Banner {
@@ -23,6 +24,7 @@
   flex-direction: column;
   min-height: 20rem;
   justify-content: space-between;
+  object-fit: contain;
 
 }
 
@@ -31,13 +33,14 @@
 }
 
 .banner-overlay {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 212, 255, 0) 100%);
+  background: rgb(56, 94, 113);
+  background: linear-gradient(180deg, rgba(56, 94, 113, 1) 0%, rgba(56, 94, 113, 0.5349789574032738) 28%, rgba(255, 255, 255, 0) 51%);
   padding: 0rem 1.5rem 1.5rem 1.5rem;
   min-height: inherit;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: #ffc085;
 
 }
 
@@ -124,7 +127,6 @@
   justify-content: center;
 }
 
-=======
 .link-to {
   display: flex;
   justify-content: flex-start;
