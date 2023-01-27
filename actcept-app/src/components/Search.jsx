@@ -1,14 +1,21 @@
 import '../App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Search(props) {
     const [query, setQuery] = useState('');
 
+    useEffect(() => {
+        props.handleSearch(query);
+    }, [query])
+
     const handleInput = (event) => {
         event.preventDefault();
-        setQuery(event.target.value)
-        console.log(`Query: ${query}`)
-        props.handleSearch(query);
+        console.log('e target val', event.target.value);
+        setQuery(event.target.value);
+        // console.log(`Query: ${query}`);
+        // props.handleSearch(query);
+
+
     }
     return (
         <div className="Search">
