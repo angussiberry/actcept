@@ -1,5 +1,5 @@
 import '../App.css';
-
+import { Link } from 'react-router-dom';
 function Banner(props) {
   return (
     <div className="Banner" style={{
@@ -16,7 +16,11 @@ function Banner(props) {
           </h4>
           <h6>Date: {props.date.split('T')[0]}</h6> {/*splitting date and time*/}
         </div>
-        <button className='btn banner-btn'>See more</button>
+        <Link to='/event-description'
+          state={props.id}>
+          <button className='btn banner-btn'>See more</button>
+        </Link>
+
       </div>
 
     </div>
