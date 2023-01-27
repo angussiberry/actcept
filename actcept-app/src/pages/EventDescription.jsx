@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import EventInfo from '../components/EventInfo';
 import EventContent from '../components/EventContent';
 import { useState, useEffect } from 'react';
-// import GoogleMap from '../components/GoogleMap';
+import GoogleMap from '../components/GoogleMap';
 
 
 function EventDescription() {
@@ -26,7 +26,7 @@ function EventDescription() {
         };
         const fetchVenue = async () => {
             try {
-                const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/getvenuebyevent/:event_id=${state}`);
+                const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/getvenuebyevent/${state}`);
                 const data = await response.json();
                 setVenue(data);
             } catch (error) {
@@ -49,7 +49,10 @@ function EventDescription() {
                         date={event[0].event_date}
                         venue_name={event[0].venue_name}
                         artist_name={event[0].artist_name}
-                        event_description={event[0].event_description} /> : null}
+                        event_description={event[0].event_description} 
+                        GoogleMap_lat={venue[0].latitude}
+                        GoogleMap_lng={venue[0].longtitude}/> : null}
+
                     <br />
                     <EventContent />
                 </div>

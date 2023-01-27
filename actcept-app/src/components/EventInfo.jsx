@@ -15,7 +15,7 @@ function EventInfo(props) {
     <div>
       <div className="Event_Card">
         {EventInfoCards}
-        <GoogleMap lat={51.5167} lng={-0.0833333} />
+        <GoogleMap lat={props.GoogleMap_lat} lng={props.GoogleMap_lng} />
       </div>
     </div>
   )
