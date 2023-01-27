@@ -1,12 +1,13 @@
 import '../App.css';
 import { Link } from 'react-router-dom';
 
-function EventContent() {
+function EventContent(props) {
     return (
         <div ClassName="other-contents">
             <div ClassName="buttons">
                 <Link
-                    to='/book-ticket'>
+                    to='/book-ticket'
+                    state={props.id}>
                     <button type='button' className='btn'>Book Now</button>
                 </Link>
 
