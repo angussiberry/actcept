@@ -38,25 +38,30 @@ function EventDescription() {
     return (
         <div className="EventDescription">
             <Header />
-            <div className="main-content">
-                {event.length ? <EventDescriptionBanner
-                    event_name={event[0].event_name}
-                    img={event[0].image_url} /> : null}
+            {event.length && venue.length ?
+                <div className="main-content">
+                    <EventDescriptionBanner
+                        event_name={event[0].event_name}
+                        img={event[0].image_url} />
 
-                <div className="event-info">
-                    {event.length && venue.length ? <EventInfo
-                        date={event[0].event_date.split('T')[0]}
-                        venue_name={event[0].venue_name}
-                        artist_name={event[0].artist_name}
-                        event_description={event[0].event_description}
-                        GoogleMap_lat={parseFloat(venue[0].latitude)}
-                        GoogleMap_lng={parseFloat(venue[0].longtitude)} /> : null}
+                    <div className="event-info">
+                        <EventInfo
+                            date={event[0].event_date.split('T')[0]}
+                            venue_name={event[0].venue_name}
+                            artist_name={event[0].artist_name}
+                            event_description={event[0].event_description}
+                            GoogleMap_lat={parseFloat(venue[0].latitude)}
+                            GoogleMap_lng={parseFloat(venue[0].longtitude)} />
 
-                    <br />
-                    {event.length ? <EventContent
-                        id={event[0].event_id} /> : null}
+                        <br />
+                        <EventContent
+                            id={event[0].event_id} />
+                    </div>
                 </div>
-            </div>
+                :
+                null
+            }
+
         </div>
     );
 }
