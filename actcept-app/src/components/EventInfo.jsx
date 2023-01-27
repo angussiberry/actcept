@@ -2,22 +2,22 @@ import '../App.css';
 import EventInfoCard from './EventInfoCard';
 import GoogleMap from './GoogleMap';
 
-function EventInfo() {
-  const EventInfoCards = 
-  <>
-      <EventInfoCard 
-      date = "09-01-2023"
-      venue_name = "NEW WHARF SPACE"
-      artist_name = "Alex"
-      event_description = "Amazing event for amazing people!"/>
-  </>
+function EventInfo(props) {
+  const EventInfoCards =
+    <>
+      <EventInfoCard
+        date={props.date}
+        venue_name={props.venue_name}
+        artist_name={props.artist_name}
+        event_description={props.event_description} />
+    </>
   return (
     <div>
-      <div className = "Event_Card">
+      <div className="Event_Card">
         {EventInfoCards}
-        <GoogleMap lat={51.5167} lng={-0.0833333} />
-        </div>
+        <GoogleMap lat={props.GoogleMap_lat} lng={props.GoogleMap_lng} />
       </div>
+    </div>
   )
 }
 

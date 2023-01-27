@@ -35,6 +35,7 @@ function Content() {
             title={event.event_name}
             img={event.image_url}
             desc={event.event_description}
+
             date={event.event_date.split('T')[0]}
           />
         )) :
@@ -44,8 +45,10 @@ function Content() {
               img={event.image_url}
               desc={event.event_description}
               date={event.event_date.split('T')[0]}
+              id={event.event_id}
             />
           ))}
+
       </div>
     </div>
 

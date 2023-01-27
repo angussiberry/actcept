@@ -109,8 +109,19 @@
 
 .Event_Banner {
   align-content: center;
-  text-align: left;
+  /* text-align: left; */
   padding: 1rem;
+  margin-left: 300px; 
+  margin-right: 300px;
+}
+
+.event-img {
+  display: flex;
+  height: 650px;
+  width: 710px; 
+  margin-left: 100px; 
+  margin-right: 100px;
+  justify-content: center;
 }
 
 .Event_Card {
@@ -142,6 +153,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
 
 .link-to {
   display: flex;

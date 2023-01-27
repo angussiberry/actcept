@@ -13,7 +13,8 @@ function Card(props) {
                 <p className="card-text">{props.desc}</p>
                 <p className="card-text"><small>{props.date}</small></p>
                 <Link
-                    to='/event-description'>
+                    to='/event-description'
+                    state={props.id}>
                     <button className='btn'> See more</button>
                 </Link>
             </div>
