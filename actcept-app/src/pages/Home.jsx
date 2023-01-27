@@ -21,17 +21,12 @@ function Home() {
     return (
         <div className="App">
             <Header />
-            {/* <Banner
-                img="https://cdn.pixabay.com/photo/2015/11/22/19/04/crowd-1056764_960_720.jpg"
-                title="Featured event"
-                desc="long test loren"
-                date="10-12-2023" /> */}
-            {/* {console.log(featuredEvent[0].image_url)} */}
             {featuredEvent.length ? <Banner
                 img={featuredEvent[0].image_url}
                 title={featuredEvent[0].event_name}
                 desc={featuredEvent[0].event_description}
-                date={featuredEvent[0].event_date} /> : null}
+                date={featuredEvent[0].event_date}
+                id={featuredEvent[0].event_id} /> : null}
 
             <Content />
         </div>

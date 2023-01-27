@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 function EventContent(props) {
     return (
-        <div ClassName="other-contents">
-            <div ClassName="buttons">
+        <div className="other-contents">
+            <div className="buttons">
                 <Link
                     to='/book-ticket'
                     state={props.id}>
@@ -15,7 +15,7 @@ function EventContent(props) {
                 <button type='button' className='btn'>Leave a Review</button>
             </div>
             <br />
-            <div ClassName="reviews">
+            <div className="reviews">
                 <h3>Reviews</h3>
                 <p>Be the first to leave a review!</p>
             </div>
