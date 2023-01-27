@@ -11,7 +11,7 @@ function Card(props) {
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
                 <p className="card-text">{props.desc}</p>
-                <p className="card-text"><small className="text-muted">{props.date}</small></p>
+                <p className="card-text"><small>{props.date}</small></p>
                 <Link
                     to='/event-description'>
                     <button className='btn'> See more</button>

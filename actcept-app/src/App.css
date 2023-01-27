@@ -86,14 +86,17 @@
   min-width: 15rem;
   max-width: 15rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-  transition: 0.3s ease-in;
+  transition: 0.2s ease-in;
 
 }
 
 .card:hover {
   transform: translate(0, -5px);
+  background-color: #6BABD3;
+  color: #000000;
 
 }
+
 
 .card-img-top {
   max-height: 15rem;
