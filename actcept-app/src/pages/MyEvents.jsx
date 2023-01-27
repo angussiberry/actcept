@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from '../components/Header';
 import EventList from "../components/EventList";
-import BannerEvents from '../components/BannerEvents';
+import BannerEvents1 from '../components/BannerEvents1';
 import '../App.css';
 
 function MyEvents() {
     return (
         <div className='my-events'>
             <Header />
-            <BannerEvents />
+            <BannerEvents1 />
             <div className='event-box upcoming'>
                 <h6 className='title-event upcoming'>Upcoming Events</h6>
                 <EventList/>
