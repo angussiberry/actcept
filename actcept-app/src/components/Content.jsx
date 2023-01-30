@@ -4,8 +4,10 @@ import Search from './Search';
 import React, { useState, useEffect } from 'react';
 
 function Content() {
+
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
+  const [sort, setSort] = useState('date')
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,12 +22,48 @@ function Content() {
   }, []);
 
   function handleSearch(query) {
-    const filtered = events.filter(event => event.event_name.toLowerCase().includes(query.toLowerCase()));
+
+    let filtered = events.filter(event => event.event_name.toLowerCase().includes(query.toLowerCase()) ||
+      event.venue_name.toLowerCase().includes(query.toLowerCase()));
+    setFilteredEvents(filtered);
+    if (!sort) return
+    filtered = filtered.sort((a, b) => {
+      if (sort === 'date') {
+        return a.event_date.split('T')[0].localeCompare(b.event_date.split('T')[0]);
+      }
+      else if (sort === 'location') {
+        return a.venue_name.localeCompare(b.venue_name)
+      }
+      return a.event_name.localeCompare(b.event_name)
+    });
+    console.log(`Handling search`)
     setFilteredEvents(filtered);
   }
+  const cards = <>
+    {events.sort((a, b) => {
+      if (sort === 'date') {
+        return a.event_date.split('T')[0].localeCompare(b.event_date.split('T')[0]);
+      }
+      else if (sort === 'location') {
+        return a.venue_name.localeCompare(b.venue_name)
+      }
+      return a.event_name.localeCompare(b.event_name)
+    }).map(event => (
+      <Card key={event.event_id}
+        title={event.event_name}
+        img={event.image_url}
+        desc={event.event_description}
+        venue={event.venue_name}
+        date={event.event_date.split('T')[0]}
+        id={event.event_id}
+      />
+    ))}
+  </>
+
   return (
     <div>
-      <Search handleSearch={handleSearch} />
+      <Search handleSearch={handleSearch}
+        setSort={setSort} />
       <div className="card-deck">
 
         {/* {console.log(`Filtered events ${filteredEvents}`)} */}
@@ -35,19 +73,13 @@ function Content() {
             title={event.event_name}
             img={event.image_url}
             desc={event.event_description}
-
+            venue={event.venue_name}
             date={event.event_date.split('T')[0]}
+            id={event.event_id}
           />
         )) :
-          events.map(event => (
-            <Card key={event.event_id}
-              title={event.event_name}
-              img={event.image_url}
-              desc={event.event_description}
-              date={event.event_date.split('T')[0]}
-              id={event.event_id}
-            />
-          ))}
+          cards
+        }
 
       </div>
     </div>
