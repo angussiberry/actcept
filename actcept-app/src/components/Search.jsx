@@ -12,9 +12,6 @@ function Search(props) {
         event.preventDefault();
         console.log('e target val', event.target.value);
         setQuery(event.target.value);
-        // console.log(`Query: ${query}`);
-        // props.handleSearch(query);
-
 
     }
     return (
@@ -22,7 +19,7 @@ function Search(props) {
             <div className='search-header'>
                 <div className='search-container'>
                     <span>Search</span>
-                    <input type="search" name="search-event" id="" onChange={handleInput} />
+                    <input className='search-bar' type="search" name="search-event" id="" onChange={handleInput} />
                 </div>
                 <div className='sort-container'>
                     <span>Sort</span>
