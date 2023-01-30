@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import MyEvents from './pages/MyEvents';
 import EventDescription from './pages/EventDescription';
 import BookTicket from './pages/BookTicket';
+import CreateAcc from './pages/CreateAcc';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/my-events" element={<MyEvents />} />
           <Route path="/" element={<Home />} />
           <Route path="/book-ticket" element={<BookTicket />} />
+          <Route path="/sign-up" element={<CreateAcc />} />
         </Routes>
       </Router>
     </div>
