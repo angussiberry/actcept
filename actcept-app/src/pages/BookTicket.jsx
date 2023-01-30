@@ -2,12 +2,14 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Ticket from '../components/Ticket';
+
 import { useState, useEffect } from 'react';
 
 
 function BookTicket(props) {
     const location = useLocation();
     const state = location.state;
+
     const [event, setEvent] = useState([]);
     const [venue, setVenue] = useState([]);
     useEffect(() => {
@@ -38,6 +40,7 @@ function BookTicket(props) {
 
             <div>
                 <div className='link-to'>
+
                     <Link to='/event-description' state={state}>{`< Return to Event`}</Link>
                 </div>
                 {event.length && venue.length ?

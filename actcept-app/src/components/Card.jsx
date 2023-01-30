@@ -1,8 +1,6 @@
 import React from 'react';
-
 // import useState from 'react;'
 import { Link } from 'react-router-dom';
-
 function Card(props) {
 
     return (
@@ -11,7 +9,11 @@ function Card(props) {
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
                 <p className="card-text">{props.desc}</p>
-                <p className="card-text"><small>{props.date}</small></p>
+                <p className="card-text">
+                    Venue:
+                    {props.venue}</p>
+
+                <p className="card-text"><span>{props.date}</span></p>
                 <Link
                     to='/event-description'
                     state={props.id}>

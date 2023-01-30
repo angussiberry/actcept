@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 
 function Search(props) {
     const [query, setQuery] = useState('');
-
     useEffect(() => {
         props.handleSearch(query);
     }, [query])
@@ -25,10 +24,10 @@ function Search(props) {
                 <div className='sort-container'>
                     <span>Sort</span>
                     <label htmlFor="">
-                        <select className='sort-bar' name="sort-event" id="">
-                            <option value="">Date</option>
-                            <option value="">Location</option>
-                            <option value="">Name</option>
+                        <select className='sort-bar' name="sort-event" id="" onChange={(e) => props.setSort(e.target.value)}>
+                            <option value="date">Date</option>
+                            <option value="location">Location</option>
+                            <option value="name">Name</option>
                         </select>
                     </label>
                 </div>
