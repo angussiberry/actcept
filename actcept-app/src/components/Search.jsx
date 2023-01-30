@@ -22,12 +22,12 @@ function Search(props) {
             <div className='search-header'>
                 <div className='search-container'>
                     <span>Search</span>
-                    <input type="search" name="search-event" id="" onChange={handleInput} />
+                    <input className='search-bar' name="search-event" id="" onChange={handleInput} />
                 </div>
                 <div className='sort-container'>
                     <span>Sort</span>
                     <label htmlFor="">
-                        <select name="sort-event" id="">
+                        <select className='sort-bar' name="sort-event" id="">
                             <option value="">Date</option>
                             <option value="">Location</option>
                             <option value="">Name</option>

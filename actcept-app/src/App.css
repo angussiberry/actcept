@@ -73,6 +73,20 @@
   font-size: 1.5rem;
 }
 
+.search-bar {
+  border-radius: 2rem;
+  width: 25rem;
+  padding-left: 1rem;
+  border: none;
+
+}
+
+.sort-bar {
+  border-radius: 2rem;
+  padding: 0 1rem 0 1rem;
+  border: none;
+}
+
 .card-deck {
   display: flex;
   flex-direction: row;
@@ -111,15 +125,15 @@
   align-content: center;
   /* text-align: left; */
   padding: 1rem;
-  margin-left: 300px; 
+  margin-left: 300px;
   margin-right: 300px;
 }
 
 .event-img {
   display: flex;
   height: 650px;
-  width: 710px; 
-  margin-left: 100px; 
+  width: 710px;
+  margin-left: 100px;
   margin-right: 100px;
   justify-content: center;
 }
@@ -144,8 +158,13 @@
 }
 
 .btn {
-  background-color: #fa8f36;
+  background-color: #b8cfdc;
   margin-left: 7px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background-color: #fa8f36;
 }
 
 .main-content {
