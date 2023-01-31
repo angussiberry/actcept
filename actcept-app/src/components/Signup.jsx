@@ -37,8 +37,8 @@ function Signup(props) {
             setText(errorString)
 
         } else {
-            await postUser(bookObj.name, bookObj.email, bookObj.email)
-            const successString = 'Account Created: Welcome to Actcept!'
+            await postUser(bookObj.name, bookObj.email, bookObj.password)
+            const successString = `Account Created: Welcome ${bookObj.name} to Actcept!`
             console.log(successString)
             setText(successString)
             setText2('Return to Booking')

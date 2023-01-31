@@ -45,7 +45,8 @@ function BookTicket(props) {
                         artist={event[0].artist_name}
                         venue={event[0].venue_name}
                         date={event[0].event_date.split('T')[0]}
-                        img={event[0].image_url} />
+                        img={event[0].image_url}
+                        event_id={event[0].event_id} />
                     :
                     null
                 }
