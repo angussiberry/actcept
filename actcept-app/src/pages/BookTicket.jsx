@@ -39,10 +39,6 @@ function BookTicket(props) {
             <Header />
 
             <div>
-                <div className='link-to'>
-
-                    <Link to='/event-description' state={state}>{`< Return to Event`}</Link>
-                </div>
                 {event.length && venue.length ?
                     <Ticket
                         name={event[0].event_name}
@@ -55,7 +51,6 @@ function BookTicket(props) {
                 }
             </div>
         </div >
-
     );
 }
 

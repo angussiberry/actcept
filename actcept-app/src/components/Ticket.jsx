@@ -3,6 +3,7 @@ import postSignUp from '../utils/postSignup';
 import { Link } from 'react-router-dom';
 import checkEmail from '../utils/emailCheck';
 import { useLocation } from 'react-router-dom';
+import '../App.css';
 
 function Ticket(props) {
     const location = useLocation();
@@ -41,38 +42,39 @@ function Ticket(props) {
 
     }
     return (
-        <>
+        <><div className='Login-component'>
             <div className='ticket-container'>
                 <div className='ticket-left'>
                     <div>
                         <h3>{props.name}</h3>
-                        <h3>Artists: {props.artist}</h3>
-                        <h3>Venue: {props.venue}</h3>
-                        <h3>Date: {props.date}</h3>
+                        <h1 className='emphasized'>{props.artist}</h1>
+                        <h5>Venue: {props.venue}</h5>
+                        <h5>Date: {props.date}</h5>
                     </div>
                     <div className='ticket-info'>
                         <form onSubmit={handleSubmit}>
                             <div>
-                                <h4 className='ticket-labels'>Your Name:</h4>
+                                <h5 className='ticket-labels'>Your Name:</h5>
                                 <input className='ticket-input' type="text" name={state.name} onChange={handleNameChange} id="" />
                             </div>
                             <div>
-                                <h4 className='ticket-labels'>Your Email:</h4>
+                                <h5 className='ticket-labels'>Your Email:</h5>
                                 <input className='ticket-input' type="email" name={state.email} onChange={handleEmailChange} id="" />
                             </div>
                             <div>
-                                <input type="submit" value="Book Now" />
+                                <button type='submit' className='btn'>Book Now</button>
                             </div>
-                            <p>{text}</p>
+                            <h5>{text}</h5>
                         </form>
-                        <Link to={"/sign-up"} state={states} className="link">{text2}</Link>
-                    </div>
 
+                    </div>
+                    <Link to={"/sign-up"} state={states} className="link2">{text2}</Link>
                 </div>
                 <div className='ticket-right'>
                     <img className='ticket-img' src={props.img} alt="Card cap" />
                 </div>
             </div>
+        </div>
         </>
     );
 }
