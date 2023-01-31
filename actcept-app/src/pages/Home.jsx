@@ -10,8 +10,9 @@ function Home() {
             try {
                 const response = await fetch('https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/events/all');
                 const data = await response.json();
-                const random = Math.floor(0 + Math.random() * ((data.length - 1) - 0));
-                setFeaturedEvent([data[random]]);
+                const newData = data.filter(obj => obj.event_confirmation === 'accepted')
+                const random = Math.floor(0 + Math.random() * ((newData.length - 1) - 0));
+                setFeaturedEvent([newData[random]]);
             } catch (error) {
                 console.log(error);
             }

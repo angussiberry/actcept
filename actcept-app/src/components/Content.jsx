@@ -13,7 +13,7 @@ function Content() {
       try {
         const response = await fetch('https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/events/all');
         const data = await response.json();
-        setEvents(data);
+        setEvents(data.filter(obj => obj.event_confirmation === 'accepted'));
       } catch (error) {
         console.log(error);
       }
