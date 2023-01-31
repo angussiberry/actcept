@@ -24,7 +24,7 @@ function BookTicket(props) {
         };
         const fetchVenue = async () => {
             try {
-                const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/events/getvenuebyevent/${state}`);
+                const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/venues/getvenuebyevent/${state}`);
                 const data = await response.json();
                 setVenue(data);
             } catch (error) {
@@ -45,7 +45,8 @@ function BookTicket(props) {
                         artist={event[0].artist_name}
                         venue={event[0].venue_name}
                         date={event[0].event_date.split('T')[0]}
-                        img={event[0].image_url} />
+                        img={event[0].image_url}
+                        event_id={event[0].event_id} />
                     :
                     null
                 }

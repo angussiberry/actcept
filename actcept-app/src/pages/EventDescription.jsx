@@ -24,7 +24,7 @@ function EventDescription() {
         };
         const fetchVenue = async () => {
             try {
-                const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/events/getvenuebyevent/${state}`);
+                const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/venues/getvenuebyevent/${state}`);
                 const data = await response.json();
                 setVenue(data);
             } catch (error) {
