@@ -12,12 +12,9 @@ function CreateAcc(props) {
         <div>
             <Header />
             <div>
-                <div className='link-to'>
-                    <Link to='/event-description' state={state}>{`< Return to Event`}</Link>
-                </div>
                 <Signup name="Create Account" artist="Sign up now" />
             </div>
-            
+
         </div >
     );
 }

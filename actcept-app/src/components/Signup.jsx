@@ -46,40 +46,38 @@ function Signup(props) {
 
     }
     return (
-        <>
+        <><div className='Login-component'>
             <div className='ticket-container'>
                 <div className='ticket-left'>
                     <div>
-                        <h1>{props.name}</h1>
-                        <h1>Artists: {props.artist}</h1>
+                        <h1>Create Account</h1>
+                        <h3>Register email to book now</h3>
                     </div>
                     <div className='ticket-info'>
-                    <form onSubmit={handleSubmit}>
-                        <div>
-                            <h4 className='ticket-labels'>Your Name:</h4>
-                            <input className='ticket-input' type="text" name={state.name} onChange={handleNameChange} id="" />
-                        </div>
-                        <div>
-                            <h4 className='ticket-labels'>Your Email:</h4>
-                            <input className='ticket-input' type="email" name={state.email} onChange={handleEmailChange} id="" />
-                        </div>
-                        <div>
-                            <h4 className='ticket-labels'>Your Password:</h4>
-                            <input className='ticket-input' type="password" name={state.password} onChange={handlePasswordChange} id="" />
-                        </div>
-                        <div>
-                        <input type="submit" value="Sign up" />
-                        </div>
-                        <p>{text}</p>
-                    </form>
-                    <Link to={"/book-ticket"} state={states} className="link">{text2}</Link>
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                <h5 className='ticket-labels'>Your Name:</h5>
+                                <input className='ticket-input' type="text" name={state.name} onChange={handleNameChange} id="" />
+                            </div>
+                            <div>
+                                <h5 className='ticket-labels'>Your Email:</h5>
+                                <input className='ticket-input' type="email" name={state.email} onChange={handleEmailChange} id="" />
+                            </div>
+                            <div>
+                                <h5 className='ticket-labels'>Your Password:</h5>
+                                <input className='ticket-input' type="password" name={state.password} onChange={handlePasswordChange} id="" />
+                            </div>
+                            <div>
+                                <input type="submit" className='btn' value="Sign up" />
+                            </div>
+                            <h5>{text}</h5>
+                        </form>
                     </div>
+                    <Link to={"/book-ticket"} state={states} className="link2">{text2}</Link>
+                </div>
 
-                </div>
-                <div className='ticket-right'>
-                    <h1>Right side</h1>
-                </div>
             </div>
+        </div>
         </>
     );
 }
