@@ -93,6 +93,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 0 1rem 0 1rem;
+  padding-bottom: 2rem;
 }
 
 .card {
@@ -239,7 +240,7 @@
 }
 
 .banner-events-header {
-  color: #F0E158
+  color: #ffc085;
 }
 
 .email-container {
@@ -257,8 +258,8 @@
 }
 
 .my-events {
-  background-color: #D9D9D9;
   padding-bottom: 40px;
+  height: 100%;
 }
 
 .event-box {
@@ -286,24 +287,11 @@
   flex-direction: column;
   min-height: 10rem;
   justify-content: space-between;
-  background-color: #D9D9D9;
-
+  background: rgb(56, 94, 113);
+  background: linear-gradient(180deg, rgba(56, 94, 113, 1) 0%, rgba(56, 94, 113, 0.5349789574032738) 28%, rgba(255, 255, 255, 0) 51%);
 }
 
-.BannerEvents1 * {
-  margin: initial;
-}
 
-.BannerEvents1 {
-  padding: 0rem 1.5rem 1.5rem 1.5rem;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  min-height: 10rem;
-  justify-content: space-between;
-  background-color: #000000;
-
-}
 
 .BannerEvents1 * {
   margin: initial;
