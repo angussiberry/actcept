@@ -3,6 +3,7 @@ import EventList from "../components/EventList";
 import BannerEvents1 from '../components/BannerEvents1';
 import '../App.css';
 import React, { useState, useEffect } from 'react';
+import Footer from '../components/Footer';
 
 function MyEvents() {
     const [email, setEmail] = useState('')
@@ -40,26 +41,30 @@ function MyEvents() {
         // console.log(`query:${query} test`)
     }
     return (
-        <div className='my-events'>
-            <Header />
-            <BannerEvents1
-                onSubmit={handleSubmit}
-            />
-            <div className='event-box upcoming'>
-                <h6 className='title-event upcoming'>Upcoming Events</h6>
-                <EventList
-                    events={upcomingEvents} />
+        <>
+            <div className='my-events'>
+                <Header />
+                <BannerEvents1
+                    onSubmit={handleSubmit}
+                />
+                <div className='event-box upcoming'>
+                    <h6 className='title-event upcoming'>Upcoming Events</h6>
+                    <EventList
+                        events={upcomingEvents} />
+                </div>
+                <div className='event-box past'>
+                    <h6 className='title-event past'>Past Events</h6>
+                    <EventList
+                        events={pastEvents} />
+                </div>
+                <div className='event-box reviews'>
+                    <h6 className='title-event reviews'>Your Reviews</h6>
+                    You haven't left any reviews yet.
+                </div>
             </div>
-            <div className='event-box past'>
-                <h6 className='title-event past'>Past Events</h6>
-                <EventList
-                    events={pastEvents} />
-            </div>
-            <div className='event-box reviews'>
-                <h6 className='title-event reviews'>Your Reviews</h6>
-                You haven't left any reviews yet.
-            </div>
-        </div>
+            <Footer />
+        </>
+
 
     );
 }
