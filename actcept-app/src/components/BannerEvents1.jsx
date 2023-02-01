@@ -23,7 +23,7 @@ function BannerEvents1(props) {
         <br />
         <input
           type="email"
-          className="search-event-email"
+          className="search-event-email search-bar"
           placeholder='Type your email here'
           id="email-search"
           onChange={handleInput}
