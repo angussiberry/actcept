@@ -5,6 +5,8 @@ import Header from '../components/Header';
 import EventInfo from '../components/EventInfo';
 import EventContent from '../components/EventContent';
 import { useState, useEffect } from 'react';
+import AddReview from '../components/AddReview';
+import ReviewCard from '../components/ReviewCard';
 
 
 function EventDescription() {
@@ -57,6 +59,20 @@ function EventDescription() {
                         <EventContent
                             id={event[0].event_id} />
                     </div>
+                    <ReviewCard
+                        name={event[0].event_name}
+                        artist={event[0].artist_name}
+                        venue={event[0].venue_name}
+                        date={event[0].event_date.split('T')[0]}
+                        img={event[0].image_url}
+                        event_id={event[0].event_id} />
+                    <AddReview
+                        name={event[0].event_name}
+                        artist={event[0].artist_name}
+                        venue={event[0].venue_name}
+                        date={event[0].event_date.split('T')[0]}
+                        img={event[0].image_url}
+                        event_id={event[0].event_id} />
                 </div>
                 :
                 null

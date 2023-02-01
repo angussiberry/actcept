@@ -11,11 +11,11 @@ function MyEvents() {
             <BannerEvents1 />
             <div className='event-box upcoming'>
                 <h6 className='title-event upcoming'>Upcoming Events</h6>
-                <EventList/>
+                <EventList />
             </div>
             <div className='event-box past'>
                 <h6 className='title-event past'>Past Events</h6>
-                <EventList/>
+                <EventList />
             </div>
             <div className='event-box reviews'>
                 <h6 className='title-event reviews'>Your Reviews</h6>
