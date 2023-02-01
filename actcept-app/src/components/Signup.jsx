@@ -31,7 +31,8 @@ function Signup(props) {
         event.preventDefault();
         const bookObj = { ...state, ...emailstate, ...passwordstate }
         const emailCheck = await checkEmail(bookObj.email) //wait here for response
-        if (emailCheck === true) {
+        console.log(emailCheck)
+        if (emailCheck.length !== 0) {
             const errorString = 'Account by this email already exists'
             console.log(errorString)
             setText(errorString)
