@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Ticket from '../components/Ticket';
 
 import { useState, useEffect } from 'react';
+import Footer from '../components/Footer';
 
 
 function BookTicket(props) {
@@ -51,6 +52,7 @@ function BookTicket(props) {
                     null
                 }
             </div>
+            <Footer />
         </div >
     );
 }

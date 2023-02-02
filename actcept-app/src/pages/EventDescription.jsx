@@ -7,6 +7,8 @@ import EventContent from '../components/EventContent';
 import { useState, useEffect } from 'react';
 import AddReview from '../components/AddReview';
 import ReviewCard from '../components/ReviewCard';
+import Footer from '../components/Footer';
+
 
 
 function EventDescription() {
@@ -38,27 +40,30 @@ function EventDescription() {
     }, []);
     venue.length && console.log(venue[0].longtitude, venue[0].latitude)
     return (
-        <div className="EventDescription">
-            <Header />
-            {event.length && venue.length ?
-                <div className="main-content">
-                    <EventDescriptionBanner
-                        event_name={event[0].event_name}
-                        img={event[0].image_url} />
+        <>
+            <div className="EventDescription">
+                <Header />
+                {event.length && venue.length ?
+                    <div className="main-content">
+                        <EventDescriptionBanner
+                            event_name={event[0].event_name}
+                            img={event[0].image_url} />
 
-                    <div className="event-info">
-                        <EventInfo
-                            date={event[0].event_date.split('T')[0]}
-                            venue_name={event[0].venue_name}
-                            artist_name={event[0].artist_name}
-                            event_description={event[0].event_description}
-                            GoogleMap_lat={parseFloat(venue[0].latitude)}
-                            GoogleMap_lng={parseFloat(venue[0].longtitude)} />
+                        <div className="event-info">
+                            <EventInfo
+                                date={event[0].event_date.split('T')[0]}
+                                venue_name={event[0].venue_name}
+                                artist_name={event[0].artist_name}
+                                event_description={event[0].event_description}
+                                GoogleMap_lat={parseFloat(venue[0].latitude)}
+                                GoogleMap_lng={parseFloat(venue[0].longtitude)} />
 
-                        <br />
-                        <EventContent
-                            id={event[0].event_id} />
+                            <br />
+                            <EventContent
+                                id={event[0].event_id} />
+                        </div>
                     </div>
+
                     <ReviewCard
                         name={event[0].event_name}
                         artist={event[0].artist_name}
@@ -78,7 +83,10 @@ function EventDescription() {
                 null
             }
 
-        </div>
+
+            </div>
+            <Footer />
+        </>
     );
 }
 

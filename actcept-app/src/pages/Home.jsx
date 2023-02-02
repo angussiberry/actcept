@@ -2,6 +2,7 @@ import Banner from "../components/Banner";
 import Content from "../components/Content";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
+import Footer from "../components/Footer";
 
 function Home() {
     const [featuredEvent, setFeaturedEvent] = useState({});
@@ -30,6 +31,7 @@ function Home() {
                 id={featuredEvent[0].event_id} /> : null}
 
             <Content />
+            <Footer />
         </div>
     );
 }
