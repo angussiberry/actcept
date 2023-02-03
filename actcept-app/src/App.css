@@ -228,8 +228,10 @@
   border-radius: 3rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
   transition: 0.2s ease-in;
-  width: 50rem;
+  width: 65rem;
   height: 22rem;
+  position: center;
+  margin-bottom: 2rem;
 }
 
 .review-left:hover {
