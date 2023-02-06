@@ -9,63 +9,47 @@ import checkEvent from '../utils/eventCheck';
 function ReviewCard(props) {
     const location = useLocation();
     const states = location.state;
-    const [state, setState] = useState({ comment: "" });
-    const [emailstate, setEmailState] = useState({ email: "" });
-    const [text, setText] = useState("");
-    const [stars, setStars] = useState("★ ★ ★ ★ ★");
-    const [numstars, setNumStars] = useState("5/5 Stars");
-    const starVal = 5
-
-    //if (starVal === 5) {
-    // setStars()
-    // setNumStars()
-    // //}
-
-    const handleNameChange = (event) => {
-        setState({ comment: event.target.value })
-        console.log(state)
+    const valstar = props.stars //should be props.stars
+    let stars = ''
+    const numstars = `${valstar}/5 Stars`
+    const astar = '★ '
+    const [user, setUser] = useState([]);
+    for (let i = 0; i < valstar; i++) {
+        stars = stars + astar
     }
-    const handleEmailChange = (event) => {
-        setEmailState({ email: event.target.value })
-        console.log(emailstate)
-    }
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        const bookObj = { ...state, ...emailstate }
-        const emailCheck = await checkEmail(bookObj.email) //wait here for response
-        console.log(emailCheck)
-        if (emailCheck.length !== 0) {
-            console.log(emailCheck[0].user_id, props.event_id)
-            const eventCheck = await checkEvent(emailCheck[0].user_id, props.event_id)    //here for duplicate sign up check                 
-            console.log(eventCheck)
-            if (eventCheck === true) {
-                const errorString = "You've already reviewed this event"
-                console.log(errorString)
-
-            } else {
-                await postSignUp(emailCheck[0].user_id, props.event_id, props.name)
-                const successString = `Thank you for reviewing ${props.artist} at ${props.venue} !`
-                console.log(successString)
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                console.log(props.user_id)
+                const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/users?user_id=${props.user_id}`);
+                const data = await response.json();
+                //const newData = data.filter(obj => obj.event_id === state)
+                //[{"review_id":1,"star_rating":5,"description":"Coldplay were so good","date":"2023-01-29T00:00:00.000Z","user_id":1,"event_id":2}]
+                setUser(data);
+                console.log(user)
+            } catch (error) {
+                console.log(error);
             }
+        };
+        fetchUser();
+    }, []);
 
-        } else {
-            const errorString = 'Account Email does not exist'
-            console.log(errorString)
-        }
-    }
     return (
         <>
             <div className='review-card'>
                 <div className='ticket-info'>
                     <div>
-                        <div class="rate">
+                        <div className="rate">
                             <p className='star'>{stars}</p><p>{numstars}</p>
                         </div>
-                        <h5 className='rev-email'>email@email.com</h5>
+                        {user.length ?
+                            <>
+                                <h5 className='rev-email'>{user[0].name} ({user[0].email})</h5>
+                            </> : null}
+
                     </div>
                     <div>
-                        <h5>"Amazing"</h5>
+                        <h5>{props.review}</h5>
                     </div>
                 </div>
             </div>

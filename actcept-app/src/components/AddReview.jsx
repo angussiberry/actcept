@@ -1,16 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import postSignUp from '../utils/postSignup';
 import { Link } from 'react-router-dom';
 import checkEmail from '../utils/emailCheck';
 import { useLocation } from 'react-router-dom';
 import '../App.css';
 import checkEvent from '../utils/eventCheck';
+import postReview from '../utils/postReview';
 
 function AddReview(props) {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = yyyy + '-' + mm + '-' + dd;
+    console.log(today);
+    //2022-02-6
     const location = useLocation();
     const states = location.state;
     const [state, setState] = useState({ comment: "" });
+    const [starstate, setStarState] = useState({ star: 0 });
     const [emailstate, setEmailState] = useState({ email: "" });
+    //{star_rating : star_rating, description : description, date : date, user_id : user_id, event_id : event_id}
     const [text, setText] = useState("");
     const handleNameChange = (event) => {
         setState({ comment: event.target.value })
@@ -19,6 +28,10 @@ function AddReview(props) {
     const handleEmailChange = (event) => {
         setEmailState({ email: event.target.value })
         console.log(emailstate)
+    }
+    const handleStarChange = (event) => {
+        setStarState({ star: event.target.value })
+        console.log(starstate)
     }
 
     const handleSubmit = async (event) => {
@@ -35,7 +48,9 @@ function AddReview(props) {
                 console.log(errorString)
 
             } else {
-                await postSignUp(emailCheck[0].user_id, props.event_id, props.name)
+                console.log(starstate.star, state.comment, today, emailCheck[0].user_id, props.event_id)
+                await postReview(starstate.star, state.comment, today, emailCheck[0].user_id, props.event_id) //star_rating, description, date, user_id, event_id
+                console.log("after postReview func")
                 const successString = `Thank you for reviewing ${props.artist} at ${props.venue} !`
                 console.log(successString)
             }
@@ -43,6 +58,7 @@ function AddReview(props) {
         } else {
             const errorString = 'Account Email does not exist'
             console.log(errorString)
+            alert(errorString)
         }
     }
     return (
@@ -55,16 +71,16 @@ function AddReview(props) {
                             <div>
                                 <input className='ticket-input' type="email" name={state.email} placeholder=' Account email' onChange={handleEmailChange} id="" />
                             </div>
-                            <div class="rate">
-                                <input type="radio" id="star5" name="rate" value="5" />
+                            <div className="rate">
+                                <input type="radio" id="star5" name={state.star} onClick={handleStarChange} value="5" />
                                 <label for="star5" title="text">5 stars</label>
-                                <input type="radio" id="star4" name="rate" value="4" />
+                                <input type="radio" id="star4" name={state.star} onClick={handleStarChange} value="4" />
                                 <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" name="rate" value="3" />
+                                <input type="radio" id="star3" name={state.star} onClick={handleStarChange} value="3" />
                                 <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" name="rate" value="2" />
+                                <input type="radio" id="star2" name={state.star} onClick={handleStarChange} value="2" />
                                 <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" name="rate" value="1" />
+                                <input type="radio" id="star1" name={state.star} onClick={handleStarChange} value="1" />
                                 <label for="star1" title="text">1 star</label>
                             </div>
                         </div>
