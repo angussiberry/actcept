@@ -15,7 +15,18 @@ function EventDescription() {
     const state = location.state;
     const [event, setEvent] = useState([]);
     const [venue, setVenue] = useState([]);
+    const [review, setReview] = useState([]);
     useEffect(() => {
+        const fetchReview = async () => {
+            try {
+                const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/reviews/all`);
+                const data = await response.json();
+                setReview(data);
+                console.log(review)
+            } catch (error) {
+                console.log(error);
+            }
+        };
         const fetchData = async () => {
             try {
                 const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/events?event_id=${state}`);
@@ -36,6 +47,7 @@ function EventDescription() {
         };
         fetchData();
         fetchVenue();
+        fetchReview();
     }, []);
     venue.length && console.log(venue[0].longtitude, venue[0].latitude)
     return (
@@ -62,19 +74,21 @@ function EventDescription() {
                     </div>
                     <div>
                         <ReviewCard
-                            name={event[0].event_name}
-                            artist={event[0].artist_name}
+                            stars={review[0].star_rating}
+                            review={review[0].description}
                             venue={event[0].venue_name}
-                            date={event[0].event_date.split('T')[0]}
-                            img={event[0].image_url}
-                            event_id={event[0].event_id} />
+                            date={review[0].date.split('T')[0]}
+                            user_id={review[0].user_id}
+                            event_id={event[0].event_id}
+                        />
                         <AddReview
                             name={event[0].event_name}
                             artist={event[0].artist_name}
                             venue={event[0].venue_name}
                             date={event[0].event_date.split('T')[0]}
                             img={event[0].image_url}
-                            event_id={event[0].event_id} />
+                            event_id={event[0].event_id}
+                        />
                     </div>
                 </div>
                 :

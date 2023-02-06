@@ -247,7 +247,7 @@
   border-radius: 3rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
   transition: 0.2s ease-in;
-  width: 65rem;
+  width: 100%;
   height: 10rem;
   margin-bottom: 20px;
 }
@@ -397,8 +397,9 @@
 }
 
 .rate:not(:checked)>input {
-  position: absolute;
-  top: -9999px;
+  position: top;
+  top: -99px;
+  display: none;
 }
 
 .rate:not(:checked)>label {
@@ -449,12 +450,6 @@
   color: #D88811;
 }
 
-
-
-.rate0:not(:checked)>input {
-  position: absolute;
-  top: -9999px;
-}
 
 .rate0:not(:checked)>label {
   float: right;
