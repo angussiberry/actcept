@@ -9,7 +9,7 @@ import checkEvent from '../utils/eventCheck';
 function ReviewCard(props) {
     const location = useLocation();
     const states = location.state;
-    const valstar = 4 //should be props.stars
+    const valstar = 0 // props.star_rating //should be props.stars
     let stars = ''
     const numstars = `${valstar}/5 Stars`
     const astar = '★ '
@@ -24,10 +24,10 @@ function ReviewCard(props) {
                         <div class="rate">
                             <p className='star'>{stars}</p><p>{numstars}</p>
                         </div>
-                        <h5 className='rev-email'>{props.email}email@email.com</h5>
+                        <h5 className='rev-email'>{props.email}</h5>
                     </div>
                     <div>
-                        <h5>"Amazing"</h5>
+                        <h5>{props.description}</h5>
                     </div>
                 </div>
             </div>
