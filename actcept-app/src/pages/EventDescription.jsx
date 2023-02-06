@@ -21,12 +21,14 @@ function EventDescription() {
             try {
                 const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/reviews/all`);
                 const data = await response.json();
-                setReview(data);
+                const newData = data.filter(obj => obj.event_id === state)
+                setReview(newData);
                 console.log(review)
             } catch (error) {
                 console.log(error);
             }
         };
+
         const fetchData = async () => {
             try {
                 const response = await fetch(`https://4o3xjugkz1.execute-api.eu-west-2.amazonaws.com/dev/events?event_id=${state}`);
@@ -73,22 +75,19 @@ function EventDescription() {
                             id={event[0].event_id} />
                     </div>
                     <div>
-                        <ReviewCard
-                            stars={review[0].star_rating}
-                            review={review[0].description}
-                            venue={event[0].venue_name}
-                            date={review[0].date.split('T')[0]}
-                            user_id={review[0].user_id}
-                            event_id={event[0].event_id}
-                        />
                         <AddReview
                             name={event[0].event_name}
-                            artist={event[0].artist_name}
-                            venue={event[0].venue_name}
                             date={event[0].event_date.split('T')[0]}
-                            img={event[0].image_url}
                             event_id={event[0].event_id}
                         />
+                        {review.length ? review.map(obj => (
+                            <ReviewCard stars={obj.star_rating}
+                                review={obj.description}
+                                date={obj.date.split('T')[0]}
+                                user_id={obj.user_id}
+                            />
+                        )) : null}
+
                     </div>
                 </div>
                 :
