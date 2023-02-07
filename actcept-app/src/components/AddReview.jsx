@@ -54,7 +54,7 @@ function AddReview(props) {
                 console.log(starstate.star, state.comment, today, emailCheck[0].user_id, props.event_id)
                 await postReview(starstate.star, state.comment, today, emailCheck[0].user_id, props.event_id) //star_rating, description, date, user_id, event_id
                 console.log("after postReview func")
-                const successString = `Thank you for reviewing ${props.artist_name} at ${props.venue_name} !`
+                const successString = `Thank you for reviewing ${props.artist_name} at the ${props.venue_name} !`
                 console.log(successString)
                 alert(successString)
             }
