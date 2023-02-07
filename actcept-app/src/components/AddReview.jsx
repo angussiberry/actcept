@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import '../App.css';
 import checkEvent from '../utils/eventCheck';
 import postReview from '../utils/postReview';
+import checkReview from '../utils/revCheck';
 
 function AddReview(props) {
     var today = new Date();
@@ -41,18 +42,21 @@ function AddReview(props) {
         console.log(emailCheck)
         if (emailCheck.length !== 0) {
             console.log(emailCheck[0].user_id, props.event_id)
-            const eventCheck = await checkEvent(emailCheck[0].user_id, props.event_id)    //here for duplicate sign up check                 
-            console.log(eventCheck)
-            if (eventCheck === true) {
+            const reviewCheck = await checkReview(emailCheck[0].user_id, props.event_id)
+            //FETCH REVIEW IF LEN !==0 ->   //here for duplicate sign up check                 
+            console.log(reviewCheck)
+            if (reviewCheck === true) {
                 const errorString = "You've already reviewed this event"
                 console.log(errorString)
+                alert(errorString)
 
             } else {
                 console.log(starstate.star, state.comment, today, emailCheck[0].user_id, props.event_id)
                 await postReview(starstate.star, state.comment, today, emailCheck[0].user_id, props.event_id) //star_rating, description, date, user_id, event_id
                 console.log("after postReview func")
-                const successString = `Thank you for reviewing ${props.artist} at ${props.venue} !`
+                const successString = `Thank you for reviewing ${props.artist_name} at ${props.venue_name} !`
                 console.log(successString)
+                alert(successString)
             }
 
         } else {
