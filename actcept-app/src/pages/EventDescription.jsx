@@ -79,6 +79,8 @@ function EventDescription() {
                             name={event[0].event_name}
                             date={event[0].event_date.split('T')[0]}
                             event_id={event[0].event_id}
+                            venue_name={event[0].venue_name}
+                            artist_name={event[0].artist_name}
                         />
                         {review.length ? review.map(obj => (
                             <ReviewCard stars={obj.star_rating}

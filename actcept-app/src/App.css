@@ -170,6 +170,19 @@
   transition: 0.2s;
 }
 
+.btn3 {
+  background-color: #b8cfdc;
+  margin-top: 1rem;
+  margin-left: 7px;
+  margin-top: 1rem;
+  transition: 0.2s;
+}
+
+.btn3:hover {
+  background-color: #b8cfdc;
+  transition: 0.2s;
+}
+
 .btn2 {
   background-color: #b8cfdc;
   margin-left: 7px;
@@ -212,10 +225,10 @@
 .ticket-left {
   padding: 2rem;
   background-color: #ea851f6f;
-  border-radius: 2rem 0em 0rem 2rem;
+  border-radius: 2rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   width: 50rem;
-  height: 25rem;
+  height: 27rem;
 }
 
 .signup-left {
@@ -277,6 +290,7 @@
 .ticket-input {
   width: 100%;
   border-radius: 0.5rem;
+  margin-bottom: 1rem;
   border-color: #d9d9d900;
   background-color: #b8cfdc;
 }
@@ -288,9 +302,9 @@
 
 .ticket-right {
   background-color: gainsboro;
-  border-radius: 0rem 2rem 2rem 0rem;
+  border-radius: 2rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  height: 25rem;
+  height: 27rem;
 }
 
 .banner-events-header {
@@ -363,8 +377,9 @@
 
 .ticket-img {
   object-fit: cover;
-  height: 25rem;
-  width: 25rem;
+  height: 27rem;
+  width: 27rem;
+  border-radius: 2rem;
   margin-left: 0px;
   margin-right: 0px;
   justify-content: center;
@@ -381,7 +396,7 @@
   background-image: url(https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
 
   /* Full height */
-  height: 100%;
+  height: 80%;
 
   /* Center and scale the image nicely */
   background-position: center;
