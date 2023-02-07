@@ -140,7 +140,8 @@
 }
 
 .Event_Card {
-  text-align: left;
+  color: #385e72;
+  text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -156,6 +157,11 @@
   padding: 5rem;
   height: 400px;
   width: 500px;
+  
+}
+
+.artist-name {
+  font-weight: bold;
 }
 
 .btn {

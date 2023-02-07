@@ -5,10 +5,10 @@ function EventInfoCard(props) {
     return (
         <div className="Event">
             <div className="event-body">
-                <p className="event-date">{props.date}</p>
-                <p className="event-location">{props.venue_name}</p>
+                <h5 className="event-date">{props.date}</h5>
+                <h5 className="event-location">{props.venue_name}</h5>
                 <h1 className="artist-name">{props.artist_name}</h1>
-                <p className="description">{props.event_description}</p>
+                <h3 className="description">{props.event_description}</h3>
             </div>
         </div>
     );
