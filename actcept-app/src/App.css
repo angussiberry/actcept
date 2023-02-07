@@ -83,7 +83,7 @@
 
 .sort-bar {
   border-radius: 2rem;
-  /* padding: 0 1rem 0 1rem; */
+  padding: 0 1rem 0 1rem;
   border: none;
 }
 
@@ -157,7 +157,7 @@
   padding: 5rem;
   height: 400px;
   width: 500px;
-  
+
 }
 
 .artist-name {
@@ -279,6 +279,7 @@
   border-radius: 0.5rem;
   border-color: #d9d9d900;
   background-color: #b8cfdc;
+  margin: 0 0 1rem 0;
 }
 
 .book-button {
@@ -367,6 +368,7 @@
   width: 25rem;
   margin-left: 0px;
   margin-right: 0px;
+  border-radius: 0 1rem 1rem 0;
   justify-content: center;
 }
 
